@@ -1,0 +1,14 @@
+.back-link {
+  position: relative;
+  display: inline-block;
+  padding: 4px 8px;
+  margin-top: 32px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.back-link:hover {
+  background-color: rgb(205, 222, 222);
+  font-weight: bold;
+  transition: 200ms ease-in;
+}
