@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-10/assets/favicon-C484CodO.svg" />
+    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-10/assets/favicon-qdS2hOlg.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snackbar</title>
     <script type="module" crossorigin src="/goit-js-hw-10/2-snackbar.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/styles-Dvc4Kcjs.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-BbbuE1sJ.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/vendor-CZjNVMTf.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/styles-D7AxUTIf.css">
   </head>
   <body>
     <main>
@@ -16,6 +18,28 @@
         <h1 class="main-title">
           <span class="main-title-gradient">Welcome</span> to Snackbar
         </h1>
+        <form class="form">
+          <label class="delay">
+            Delay (ms)
+            <input class="inp-snackbar" type="number" name="delay" required />
+          </label>
+
+          <fieldset class="fieldset">
+            <legend>State</legend>
+            <label>
+              <input type="radio" name="state" value="fulfilled" required />
+              Fulfilled
+            </label>
+            <label>
+              <input type="radio" name="state" value="rejected" required />
+              Rejected
+            </label>
+          </fieldset>
+
+          <button class="btn-snackbar" type="submit">
+            Create notification
+          </button>
+        </form>
 
         <a class="back-link" href="./index.html">Go back</a>
       </div>
