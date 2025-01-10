@@ -1,53 +1,47 @@
-const timer = {
-  deadline: new Date('2025-01-06T21:30:00'),
-  intervalId: null,
-  elements: {
-    days: document.querySelector('.js-timer__days'),
-    hours: document.querySelector('.js-timer__hours'),
-    minutes: document.querySelector('.js-timer__minutes'),
-    seconds: document.querySelector('.js-timer__seconds'),
-  },
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
-  start() {
-    this.intervalId = setInterval(() => {
-      const diff = this.deadline - Date.now();
+document.querySelector('.form').addEventListener('submit', event => {
+  event.preventDefault();
 
-      if (diff <= 0) {
-        this.stop();
+  const form = event.currentTarget;
+  const delayInput = form.elements.delay.value;
+  const state = form.elements.state.value;
+  const delay = Number(delayInput);
 
-        return;
+  if (isNaN(delay) || delay < 0) {
+    iziToast.error({
+      title: 'Error',
+      message: 'Please enter a valid delay in milliseconds.',
+    });
+    return;
+  }
+
+  createPromise(delay, state)
+    .then(message => {
+      iziToast.success({
+        title: 'Success',
+        message,
+        position: 'topRight',
+      });
+    })
+    .catch(message => {
+      iziToast.error({
+        title: 'Error',
+        message,
+        position: 'topRight',
+      });
+    });
+});
+
+function createPromise(delay, state) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (state === 'fulfilled') {
+        resolve(`✅ Fulfilled promise in ${delay}ms`);
+      } else {
+        reject(`❌ Rejected promise in ${delay}ms`);
       }
-
-      const timeComponents = this.getTimeComponents(diff);
-
-      this.elements.days.textContent = this.pad(timeComponents.days);
-      this.elements.hours.textContent = this.pad(timeComponents.hours);
-      this.elements.minutes.textContent = this.pad(timeComponents.minutes);
-      this.elements.seconds.textContent = this.pad(timeComponents.seconds);
-    }, 1000);
-  },
-
-  stop() {
-    clearInterval(this.intervalId);
-  },
-
-  getTimeComponents(diff) {
-    const days = Math.floor(diff / 1000 / 60 / 60 / 24);
-    const hours = Math.floor(diff / 1000 / 60 / 60) % 24;
-    const minutes = Math.floor(diff / 1000 / 60) % 60;
-    const seconds = Math.floor(diff / 1000) % 60;
-
-    return {
-      days,
-      hours,
-      minutes,
-      seconds,
-    };
-  },
-
-  pad(value) {
-    return String(value).padStart(2, '0');
-  },
-};
-
-timer.start();
+    }, delay);
+  });
+}

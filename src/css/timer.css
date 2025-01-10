@@ -2,7 +2,7 @@
   margin-bottom: 60px;
 }
 
-input {
+.inp {
   border: 1px solid #808080;
   border-radius: 4px;
   padding: 0px 10px;
@@ -17,20 +17,20 @@ input {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:hover,
-input:focus {
+.inp:hover,
+.inp:focus {
   transform: scale(1.02);
   box-shadow: 0 8px 12px #00000033;
   border: 1px solid #000000;
 }
-input:active {
+.inp:active {
   border: 1px solid #4e75ff;
 }
-input:disabled {
+.inp:disabled {
   color: #aaa;
 }
 
-button {
+.btn {
   border-radius: 8px;
   padding: 8px 16px;
   width: 86px;
@@ -44,11 +44,11 @@ button {
   transition: background-color 0.3s ease, transform 0.3s ease;
   align-self: flex-start;
 }
-button:hover,
-button:focus {
+.btn:hover,
+.btn:focus {
   background-color: #6c8cff;
 }
-button:disabled {
+.btn:disabled {
   color: #989898;
   background-color: #cfcfcf;
 }
