@@ -13,7 +13,6 @@
 /* Sections style */
 @import url('./header.css');
 @import url('simplelightbox/dist/simple-lightbox.min.css');
-@import url('./gallery.css');
-@import url('form.css');
 @import url('./vite-promo.css');
+@import url('./timer.css');
 @import url('./back-link.css');

@@ -1,0 +1,72 @@
+.main-title {
+  margin-bottom: 60px;
+}
+
+input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 0px 10px;
+  width: 280px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  box-shadow: 0 4px 6px #0000001a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:hover,
+input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 8px 12px #00000033;
+  border: 1px solid #000000;
+}
+input:active {
+  border: 1px solid #4e75ff;
+}
+input:disabled {
+  color: #aaa;
+}
+
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 86px;
+  height: 40px;
+  border: none;
+  background-color: #4e75ff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  align-self: flex-start;
+}
+button:hover,
+button:focus {
+  background-color: #6c8cff;
+}
+button:disabled {
+  color: #989898;
+  background-color: #cfcfcf;
+}
+.timer {
+  text-align: center;
+  transform: translate3d(0px, 0px, 0px);
+  margin: 24px auto;
+  display: flex;
+  vertical-align: middle;
+  height: 166px;
+  justify-content: center;
+  gap: 25px;
+}
+.value {
+  display: block;
+  font-size: 60px;
+}
+.label {
+  font-size: 16px;
+  text-transform: uppercase;
+}
